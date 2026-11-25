@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "Lookup1",
+				"description": "test git",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
