@@ -9,10 +9,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@createArray('Customer','Product','CustomerAddress','ProductDescription')",
+						"value": "@createArray('Customer','Product','test','CustomerAddress','ProductDescription')",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
+					"batchCount": 2,
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -80,6 +81,26 @@
 							]
 						}
 					]
+				}
+			},
+			{
+				"name": "Fail1",
+				"type": "Fail",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "Failed due to incorrect table name",
+					"errorCode": {
+						"value": "100",
+						"type": "Expression"
+					}
 				}
 			}
 		],
