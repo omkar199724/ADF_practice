@@ -1,0 +1,13 @@
+{
+	"name": "REST_LS",
+	"properties": {
+		"description": "To fetch data from Rest API",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.coinpaprika.com/v1/tickers",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
